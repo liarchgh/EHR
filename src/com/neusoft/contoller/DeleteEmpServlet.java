@@ -8,20 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.neusoft.demo.dao.ls.DeptDaoImpl;
-import com.neusoft.demo.entity.Dept;
+import ocm.neusoft.deno.dao.entity.ls.EmpDaoImpl;
 
 /**
- * Servlet implementation class AddDept
+ * Servlet implementation class DeleteEmpServlet
  */
-@WebServlet("/Dept/AddDept")//http://localhost:8080/EHR/Dept/AddDept
-public class AddDept extends HttpServlet {
+@WebServlet("/Emp/Delete")
+public class DeleteEmpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddDept() {
+    public DeleteEmpServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +29,17 @@ public class AddDept extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String no = request.getParameter("no");
+		EmpDaoImpl edi = new EmpDaoImpl();
+		edi.deleteEmp(Integer.parseInt(no));
+		request.getRequestDispatcher("/page/query_Emp.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String deptNo = request.getParameter("deptNo");
-		String dName = request.getParameter("dName");
-		String dLoc = request.getParameter("dLoc");
-		DeptDaoImpl dd = new DeptDaoImpl();
-		dd.insertDept(new Dept(Integer.parseInt(deptNo), dName, dLoc));
-		
-		request.getRequestDispatcher("/page/DeptInsertQuery.jsp").forward(request, response);
+		// TODO Auto-generated method stub
 	}
 
 }

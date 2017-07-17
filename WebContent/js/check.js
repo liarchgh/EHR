@@ -17,7 +17,7 @@ function check(){
 function checkDeptNo(){
     var deptNo = document.getElementById("deptNo").value;
     var sta = /^\d{2}$/;
-    if(!sta.test(deptNo)){
+    if(!sta.test(deptNo) && deptNo != ""){
         var deptNoS = document.getElementById("deptNoS");
         deptNoS.innerHTML = "部门编号应该为2位";
         return false;

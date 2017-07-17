@@ -1,8 +1,6 @@
 package com.neusoft.contoller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +45,7 @@ public class RegisterEmpServlet extends HttpServlet {
 		System.out.println(ename);
 		System.out.println(job);
 		System.out.println(mgr);
-		mgr = "7324";
+//		mgr = "7324";
 		System.out.println(hiredate);
 		System.out.println(sal);
 		System.out.println(comm);
@@ -63,10 +61,11 @@ public class RegisterEmpServlet extends HttpServlet {
 		emp.setDept(new Dept(20, null, null));
 
 		EmpDaoImpl ed = new EmpDaoImpl();
-		//ed.insertEmp(emp);
-		List<Emp> all = null;
-		all = ed.selectAllEmps(null, null);
-		
-		System.out.println(all);
+		ed.insertEmp(emp);
+//		List<Emp> all = null;
+//		all = ed.selectAllEmps(null, null);
+//		
+//		System.out.println(all);
+		request.getRequestDispatcher("/page/query_Emp.jsp").forward(request, response);
 	}
 }

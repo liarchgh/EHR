@@ -50,7 +50,7 @@ public class EmpDaoImpl implements EmpDao{
 			sql = sql + " and empno = '" + eno + "' ";
 		}
 		if(name != null && !name.equals("")){
-			sql = sql + " and name = '" + name + "'";
+			sql = sql + " and ename = '" + name + "'";
 		}
 		try {
 			ps = conn.prepareStatement(sql);

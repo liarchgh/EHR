@@ -38,27 +38,27 @@
 </form>
 <table>
     <tr>
-        <th>员工编号</th>
-        <th>员工姓名</th>
-        <th>经理编号</th>
-        <th>岗位</th>
-        <th>入职时间</th>
-        <th>薪资</th>
-        <th>奖金</th>
-        <th>部门名称</th>
-        <th>操作</th>
+        <th>员工编号	</th>
+        <th>员工姓名	</th>
+        <th>经理编号	</th>
+        <th>岗位	</th>
+        <th>入职时间	</th>
+        <th>薪资	</th>
+        <th>奖金	</th>
+        <th>部门名称	</th>
+        <th>操作	</th>
     </tr>
     <c:forEach items="${requestScope.emplist }" var="e">
    		<tr>
-	        <td>${e.empNo}</td>
-	        <td>${e.empName}</td>
-	        <td>${e.managerNo}</td>
-	        <td>${e.job}</td>
-	        <td>${e.hiredate}</td>
-	        <td>${e.salary}</td>
-	        <td>${e.comm}</td>
-	        <td>${e.dept.deptName}</td>
-        	<td><a href="">修改</a> <a href="">删除</a></td>
+	        <td>${e.empNo}	</td>
+	        <td>${e.empName}	</td>
+	        <td>${e.managerNo}	</td>
+	        <td>${e.job}	</td>
+	        <td>${e.hiredate}	</td>
+	        <td>${e.salary}	</td>
+	        <td>${e.comm}	</td>
+	        <td>${e.dept.deptName}	</td>
+        	<td><a href="">修改	</a> <a href="/EHR/Emp/Delete?no=${e.empNo }">删除</a></td>
   		</tr>
 </c:forEach>
 </table>

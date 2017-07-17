@@ -31,7 +31,7 @@ public class DeptDaoImpl implements DeptDao{
 	}
 
 	@Override
-	public List<Dept> selectAllDepts(String dno, String dname) {
+	public List<Dept> selectAllDepts(String dno, String dname, String dloc) {
 		List<Dept> depts = new ArrayList<Dept>();
 		Connection conn = DBUtil.getConnection();
 		PreparedStatement ps = null;
@@ -39,10 +39,13 @@ public class DeptDaoImpl implements DeptDao{
 		
 		String sql = "select * from dept where 1=1 ";
 		if(dno != null && !dno.equals("")){
-			sql = sql + "and deptno = '" + dno + "' ";
+			sql = sql + " and deptno = '" + dno + "' ";
 		}
 		if(dname != null && !dname.equals("")){
-			sql = sql + "and dname = '" + dname + "'";
+			sql = sql + " and dname = '" + dname + "'";
+		}
+		if(dloc != null && !dloc.equals("")){
+			sql = sql + " and loc = '" + dloc + "'";
 		}
 		
 		try {
