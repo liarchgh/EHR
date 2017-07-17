@@ -71,16 +71,17 @@ public class DeptDaoImpl implements DeptDao{
 		PreparedStatement ps = null;
 		
 		String sql= "update dept set dname = ?, loc = ? where deptno = ?";
+		System.out.println(d.toString());
 		
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1,  d.getDeptName());
 			ps.setString(2,  d.getLoc());
 			ps.setInt(3,  d.getDeptNo());
+			System.out.println(ps.toString());
 			ps.executeUpdate();
 			System.out.println("UpdateSuccessfully.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally{

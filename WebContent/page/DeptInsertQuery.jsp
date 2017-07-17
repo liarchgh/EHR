@@ -10,11 +10,11 @@
 <!-- //http://localhost:8080/EHR/Dept/AddDept -->
 <body>
 	<form action="" method="post" onsubmit="return check()" id="form">
-		部门编号：<input type="text" id="deptNo" value="50" name="deptNo"><span id="deptNoS"></span>
+		部门编号：<input type="text" id="deptNo" name="deptNo"><span id="deptNoS"></span>
 		<br>
-		部门名称：<input type="text" id="dName" value="Salsdsd" name="dName"><span id="dNameS"></span>
+		部门名称：<input type="text" id="dName" name="dName"><span id="dNameS"></span>
 		<br>
-		 部门所在地：<input type="text" id="dLoc" value="NewYork" name="dLoc"><span id="dLocS"></span>
+		 部门所在地：<input type="text" id="dLoc" name="dLoc"><span id="dLocS"></span>
         <br>
         <input type="submit" name="insert" value="insert" onclick="insertDept()"/>
         <input type="submit" name="query" value="query" onclick="queryDept()"/>
@@ -31,7 +31,7 @@
 	        <td>${d.deptName}	</td>
 	        <td>${d.loc}	</td>
 
-        	<td><a href="">修改	</a> <a href="/EHR/Dept/Delete?no=${d.deptNo }">删除</a></td>
+        	<td><a href="/EHR/Dept/Update?deptNo=${d.deptNo }">修改	</a> <a href="/EHR/Dept/Delete?no=${d.deptNo }">删除</a></td>
   		</tr>
 	</c:forEach>
 </table>

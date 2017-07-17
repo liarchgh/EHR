@@ -1,6 +1,7 @@
 <%@page import="java.util.List" %>
 <%@page import="ocm.neusoft.deno.dao.entity.ls.Emp" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +59,7 @@
 	        <td>${e.salary}	</td>
 	        <td>${e.comm}	</td>
 	        <td>${e.dept.deptName}	</td>
-        	<td><a href="">修改	</a> <a href="/EHR/Emp/Delete?no=${e.empNo }">删除</a></td>
+        	<td><a href="/EHR/Emp/Update?empNo=${e.empNo }">修改	</a> <a href="/EHR/Emp/Update?no=${e.empNo }">删除</a></td>
   		</tr>
 </c:forEach>
 </table>

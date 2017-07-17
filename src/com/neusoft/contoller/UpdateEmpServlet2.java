@@ -1,6 +1,7 @@
 package com.neusoft.contoller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +16,8 @@ import ocm.neusoft.deno.dao.entity.ls.EmpDaoImpl;
 /**
  * Servlet implementation class RegisterEmpServlet
  */
-@WebServlet("/Emp/RegisterEmpServlet")//http://localhost:8080/EHR/RegisterEmpServlet
-public class RegisterEmpServlet extends HttpServlet {
+@WebServlet("/Emp/Update2")//http://localhost:8080/EHR/RegisterEmpServlet
+public class UpdateEmpServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -50,7 +51,6 @@ public class RegisterEmpServlet extends HttpServlet {
 		System.out.println(hiredate);
 		System.out.println(sal);
 		System.out.println(comm);
-		System.out.println(deptno);
 		
 		Emp emp = new Emp();
 		emp.setEmpNo(Integer.parseInt(empno));
@@ -63,10 +63,10 @@ public class RegisterEmpServlet extends HttpServlet {
 		emp.setDept(new Dept(Integer.parseInt(deptno), null, null));
 
 		EmpDaoImpl ed = new EmpDaoImpl();
-		ed.insertEmp(emp);
+		ed.updateEmp(emp);
 //		List<Emp> all = null;
 //		all = ed.selectAllEmps(null, null);
-		
+//		
 //		System.out.println(all);
 		request.getRequestDispatcher("/page/query_Emp.jsp").forward(request, response);
 	}

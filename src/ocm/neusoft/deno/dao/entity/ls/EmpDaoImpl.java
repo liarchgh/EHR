@@ -68,7 +68,7 @@ public class EmpDaoImpl implements EmpDao{
 				String loc = rs.getString(10);
 				
 				Dept d = new Dept(deptno, deptname, loc);
-				Emp e = new Emp(empno, ename, job, mgr, hiredate, sal, comm, d);
+				Emp e = new Emp(empno, ename, job, mgr, hiredate.split(" ")[0], sal, comm, d);
 				res.add(e);
 			}
 			System.out.println("SelectAllSuccessfully.");
@@ -102,7 +102,7 @@ public class EmpDaoImpl implements EmpDao{
 		Connection conn = DBUtil.getConnection();
 		PreparedStatement ps = null;
 		
-		String sql = "update emp set ename = ?, job = ?, mgr = ?, hiredate = ?, sal = ?, comm = ?, deptno = ? where empno = ?";
+		String sql = "update emp set ename = ?, job = ?, mgr = ?, hiredate = to_date(?, 'yyyy-mm-dd'), sal = ?, comm = ?, deptno = ? where empno = ?";
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, emp.getEmpName());
@@ -113,6 +113,7 @@ public class EmpDaoImpl implements EmpDao{
 			ps.setFloat(6, emp.getComm());
 			ps.setInt(7, emp.getDept().getDeptNo());
 			ps.setInt(8, emp.getEmpNo());
+			System.out.println(ps.toString());
 			ps.executeUpdate();
 			System.out.println("UpdateSuccessfully.");
 		} catch (SQLException e) {
