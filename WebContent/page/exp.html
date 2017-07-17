@@ -1,0 +1,118 @@
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="always">
+    <title>注册信息</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://static-s.bilibili.com/opensearch.xml"/>
+    <link rel="stylesheet" href="https://static-s.bilibili.com/css/core-v5/base.css">
+
+    <link id="css" rel="stylesheet" type="text/css" href="https://static-s.bilibili.com/passport/css/zclc2.1460959081.css" />
+    <script>
+        var use_min_js = 0;
+    </script>
+    <script type="text/javascript" src="https://static-s.bilibili.com/passport/seajs/sea.js" id="seajsnode"></script>
+    <script type="text/javascript" src="https://static-s.bilibili.com/passport/seajs/sea.config.js"> </script>
+</head>
+<body>
+<div class="head_foot_content">
+    <div class="zcdl_content pos_re">
+        <div class="line"></div>
+        <div class="reg-title title1"></div>
+        <div class="center_title">
+            <form method="post" onsubmit="return false;">
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="编号：" value="编号：" />
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="姓名：" value="姓名：" />
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="工作：" value="工作：" />
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="经理：" value="经理：" />
+                </div>
+                <div class="new_phone center_div">
+                    <select name="country_code" id="country_code">
+
+                        <option value="1" code="86">中国大陆</option>
+
+                        <option value="5" code="852">香港特别行政区</option>
+
+                        <option value="2" code="853">澳门特别行政区</option>
+
+                        <option value="3" code="886">台湾地区</option>
+
+                    </select>
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="入职时间：" value="入职时间：" />
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="工资：" value="工资：" />
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="奖金：" value="奖金：" />
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password mar_b_40px" type="text" name="empno" jvdefault="部门：" value="部门：" />
+                </div>
+                <div class="new_phone center_div">
+                    <input class="user_id_password" type="password" id="password" name="userpwd" placeholder="密码（6-16个字符组成，区分大小写）" jvmethod="checkPwd"/>
+                </div>
+                <div class="safe_window" id="safe_window">
+                    <p>安全系数</p>
+                    <div class="a_pw "></div>
+                </div>
+                <p class="yzm_x mar_t_56" id="userpwdTip"></p>
+                <div class="new_phone center_div">
+                    <select name="country_code" id="country_code">
+
+                        <option value="1" code="86">中国大陆</option>
+
+                        <option value="5" code="852">香港特别行政区</option>
+
+                        <option value="2" code="853">澳门特别行政区</option>
+
+                        <option value="3" code="886">台湾地区</option>
+
+                    </select> <input id="new_phone" type="text" name="tel" value="填写常用手机号" jvdefault="填写常用手机号" jvmethod="checkPhone" jverrortip="手机号格式错误" jvtipid="errTipPhone" />
+                </div>
+                <a href="/register/mail" class="blue">用邮箱注册></a>
+                <p class="yzm_x mar_r_160" id="errTipPhone" style="margin-top: -67px;"></p>
+                <div class="new_phone center_div yzm yzm_buttom_a">
+                    <input id="yzm" type="text" name="code" jvdefault="手机验证码"
+                           value="手机验证码" jverrortip="验证码错误" jvtipid="captchTip"
+                           jvmethod="checkCaptch" />
+                    <div class="check" id="captchCheck" style="display: none;"></div>
+                    <a href="#" class="yzm_buttom" id="getCaptch">点击获取</a>
+                </div>
+                <p class="yzm_x" id="captchTip"></p>
+                <div class="new_phone center_div" style="margin-top:20px; text-align: left; line-height: 1.625em;">
+                    <label><input class="m-r-10" jvmethod="checkAgree" name="agree" id="agree" type="checkbox" value="1" />我已同意<a target="_blank" href="/register/licence">《哔哩哔哩弹幕网用户使用协议》</a>和<a target="_blank" href="http://www.bilibili.com/html/help.html#q">《哔哩哔哩弹幕网账号中心规范》</a></label>
+                </div>
+                <input class="next_step center_div mar_t_120 ys-a" type="submit" value="注册" id="regSubmit">
+                <div class="clearfix">
+                    <a href="/login" class="blue">已有账号，直接登录></a>
+                </div>
+            </form>
+        </div>
+        <div class="phone_window" id="phone_window"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    seajs.use("register-index");
+</script>
+
+</body>
+</html>
+
