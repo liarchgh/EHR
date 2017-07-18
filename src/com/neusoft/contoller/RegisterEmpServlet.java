@@ -40,7 +40,7 @@ public class RegisterEmpServlet extends HttpServlet {
 		String hiredate = request.getParameter("hiredate");
 		String sal = request.getParameter("sal");
 		String comm = request.getParameter("comm");
-		String deptno = request.getParameter("deptno");
+		String deptno = request.getParameter("viewDeptNo");
 
 		System.out.println(empno);
 		System.out.println(ename);
@@ -60,6 +60,7 @@ public class RegisterEmpServlet extends HttpServlet {
 		emp.setHiredate(hiredate);
 		emp.setSalary(Float.parseFloat(sal));
 		emp.setComm(Float.parseFloat(comm));
+		System.out.println(deptno);
 		emp.setDept(new Dept(Integer.parseInt(deptno), null, null));
 
 		EmpDaoImpl ed = new EmpDaoImpl();

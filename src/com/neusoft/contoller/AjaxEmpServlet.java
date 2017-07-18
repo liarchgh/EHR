@@ -29,7 +29,7 @@ public class AjaxEmpServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		List<Emp> emps = edi.selectAllEmps(no, null);
 		if(emps.size() == 0){
-			out.write("Right.");
+			out.write("Right☺.");
 		}
 		else{
 			out.write("Sorry! This count can't be used.");

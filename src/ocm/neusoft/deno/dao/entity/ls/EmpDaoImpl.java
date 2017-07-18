@@ -66,8 +66,20 @@ public class EmpDaoImpl implements EmpDao{
 				int deptno = rs.getInt(8);
 				String deptname = rs.getString(9);
 				String loc = rs.getString(10);
-				
+
 				Dept d = new Dept(deptno, deptname, loc);
+				System.out.println(d.toString());
+				System.out.println(empno);
+				System.out.println(ename);
+				System.out.println(job);
+				System.out.println(hiredate);
+				System.out.println(mgr);
+				System.out.println(sal);
+				System.out.println(comm);
+				System.out.println(deptno);
+				System.out.println(deptname);
+				System.out.println(loc);
+
 				Emp e = new Emp(empno, ename, job, mgr, hiredate.split(" ")[0], sal, comm, d);
 				res.add(e);
 			}
