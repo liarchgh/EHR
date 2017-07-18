@@ -1,22 +1,17 @@
 package com.neusoft.contoller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ocm.neusoft.deno.dao.entity.ls.Emp;
-import ocm.neusoft.deno.dao.entity.ls.EmpDaoImpl;
-
 /**
- * Servlet implementation class QueryEmpServlet
+ * Servlet implementation class AjaxMgrServlet
  */
-@WebServlet("/Emp/Query")
-public class QueryEmpServlet extends HttpServlet {
+@WebServlet("/Mgr/Ajax")
+public class AjaxMgrServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -30,13 +25,7 @@ public class QueryEmpServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String empno = request.getParameter("eno");
-		String ename = request.getParameter("ename");
-		
-		EmpDaoImpl ee = new EmpDaoImpl();
-		List<Emp> emps = ee.selectAllEmps(empno, ename);
-		request.setAttribute("emplist", emps);
-		request.getRequestDispatcher("/page/query_Emp.jsp").forward(request,  response);
+		// TODO Auto-generated method stub
 	}
 
 }

@@ -71,7 +71,6 @@ public class EmpDaoImpl implements EmpDao{
 				Emp e = new Emp(empno, ename, job, mgr, hiredate.split(" ")[0], sal, comm, d);
 				res.add(e);
 			}
-			System.out.println("SelectAllSuccessfully.");
 			return res;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

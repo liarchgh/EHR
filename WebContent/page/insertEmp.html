@@ -5,7 +5,61 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href = "../css/bootstrap.css" rel="stylesheet">
-    <script src="../js/try.js"></script>
+    <script src="/EHR/js/jquery-1.7.2.js"></script>
+    <script>
+	$(function(){
+		$("#empno").blur(function(){
+			var novalue = $("#empno").val();
+			$.ajax({
+				url:"/EHR/Emp/Ajax?no=" + novalue,
+				type:"GET",
+				dataType:"text",
+				success:function(data){
+					$("#enoS").html(data);
+				},
+				error:function(){
+					$("#enoS").html(data);
+				}
+			});
+		});
+	});
+	$(function(){
+		$.ajax({
+			url:"/EHR/Dept/Ajax",
+			type:"GET",
+			dataType:"json",
+			success:function(data){
+				var str = "";
+				$(data).each(function(i, dept){
+					str = str + "<option value=" + dept.deptNo+">"
+					+ dept.deptName + "</option>";
+				});
+				$("#viewDeptNo").html(str);
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	});
+	$(function(){
+		$.ajax({
+			url:"/EHR/Mgr/Ajax",
+			type:"GET",
+			dataType:"json",
+			success:function(data){
+				var str = "";
+				$(data).each(function(i, dept){
+					str = str + "<option value=" + dept.deptNo+">"
+					+ dept.deptName + "</option>";
+				});
+				$("#viewDeptNo").html(str);
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	});
+    </script>
 </head>
 <body class = "font"><!--注册信息表单：注册员工信息（编号、姓名、工作、经理、入职时间、工资、奖金、部门
 <form action="" method="post">
@@ -20,6 +74,7 @@
         <label for="inputEmail3" class="col-sm-2 control-label">员工编号：</label>
         <div class="col-sm-10">
             <input type="text" class="form-control"  placeholder="number" name="empno" id="empno" value="1234">
+    		<font color="red" size="+1"><span id="enoS"></span></font>
         </div>
     </div>
     <div class="form-group">
@@ -55,8 +110,7 @@
             <input type="text" class="form-control" placeholder="comm" name = "comm" value="1234">
         </div>
     </div>
-    部门：<select name="deptno" class="form-control">
-        <option value="20">SAL</option>
+    部门：<select name="viewDeptNo" id="viewDeptNo" class="form-control">
     </select>
     <br>
     <input type="submit" value="注册" />

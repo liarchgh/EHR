@@ -1,6 +1,7 @@
 package com.neusoft.contoller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,34 +10,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ocm.neusoft.deno.dao.entity.ls.Emp;
-import ocm.neusoft.deno.dao.entity.ls.EmpDaoImpl;
+import net.sf.json.JSONArray;
+
+import com.neusoft.demo.dao.ls.DeptDaoImpl;
+import com.neusoft.demo.entity.Dept;
 
 /**
- * Servlet implementation class QueryEmpServlet
+ * Servlet implementation class AjaxDeptServlet
  */
-@WebServlet("/Emp/Query")
-public class QueryEmpServlet extends HttpServlet {
+@WebServlet("/Dept/Ajax")
+public class AjaxDeptServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		DeptDaoImpl ddi = new DeptDaoImpl();
+		List<Dept>depts = ddi.selectAllDepts(null, null, null);
+		JSONArray jsonarray = JSONArray.fromObject(depts);
+		PrintWriter ww = response.getWriter();
+		ww.write(jsonarray.toString());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String empno = request.getParameter("eno");
-		String ename = request.getParameter("ename");
-		
-		EmpDaoImpl ee = new EmpDaoImpl();
-		List<Emp> emps = ee.selectAllEmps(empno, ename);
-		request.setAttribute("emplist", emps);
-		request.getRequestDispatcher("/page/query_Emp.jsp").forward(request,  response);
+		// TODO Auto-generated method stub
 	}
 
 }
