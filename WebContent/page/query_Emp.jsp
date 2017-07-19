@@ -30,6 +30,7 @@
     </script>
 </head>
 <body>
+<p>${sessionScope.user }，欢迎访问</p>
 <form action="../Emp/Query" method="post" onsubmit="return checkename()">
     员工姓名：<input type="text" name="ename" id="ename"><span id="enamespan"></span>
     <br>
